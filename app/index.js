@@ -27,6 +27,8 @@ module.exports = class Application {
     }
 
     setConfig() {
+        app.use(express.json()) // for parsing application/json
+        app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({ extended : true }));
         app.use(session({...config.session}));
