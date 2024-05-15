@@ -10,7 +10,7 @@ const connectionValidator = require('app/http/validators/connectionValidator');
 router.get('/' , connectionController.index);
 
 //Connection Routes
-router.get('/connections' , connectionController.index);
+router.get('/connections' , connectionController.showConnections);
 router.post('/connections/create' , connectionValidator.handle() ,connectionController.store);
 router.put('/connections/:id' ,connectionValidator.handle() ,connectionController.update);
 router.delete('/connections/:id' , connectionController.destroy);

@@ -3,7 +3,7 @@ const Connection = require('app/models/connection');
 
 
 class connectionController extends controller {
-    index(req , res) {
+    async index(req , res) {
         res.json('Megashid Task')
     }
 
@@ -28,7 +28,7 @@ class connectionController extends controller {
         }
     }
 
-    async index(req , res , next) {
+    async showConnections(req , res , next) {
         let connections = await Connection.find();
         res.json(connections)
     }
